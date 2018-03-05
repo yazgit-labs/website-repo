@@ -549,8 +549,6 @@ Ankara Üniversitesi, 50. Yıl Yerleşkesi, I Blok, Gölbaşı / ANKARA</div>
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.easing.min.js"></script>
-<!--<script src="js/one-page-nav.js"></script>-->
-<script src="js/jquery.countdown.js"></script>
 <script src="js/scripts.js"></script>
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdMydqFSXArJJYBus3P1giJLlO9oQMvJc&callback=initMap"></script>
@@ -560,15 +558,31 @@ Ankara Üniversitesi, 50. Yıl Yerleşkesi, I Blok, Gölbaşı / ANKARA</div>
 <script src="js/masonry.pkgd.min.js"></script>
 <script src="js/jquery.flexslider-min.js"></script>
 <script src="js/main.js"></script>
-<script src="js/gallery.js"></script>  
+<script src="js/gallery.js"></script> 
 <script type="text/javascript">
-  $('.count-down').countdown('2018/05/08', function(event) {
-    $('#count-month').html(event.strftime('%m'));
-    $('#count-day').html(event.strftime('%d'));
-    $('#count-hour').html(event.strftime('%H'));
-    $('#count-minute').html(event.strftime('%M'));
-    $('#count-second').html(event.strftime('%S'));
-  });
+    var countDownDate = new Date("April 28, 2018").getTime();
+    var x = setInterval(function() {
+
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+
+      var months = Math.floor(distance / (1000 * 60 * 60 * 24 * 31));
+      var days = Math.floor((distance % (1000 * 60 * 60 * 24 * 31)) / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("count-month").innerHTML = months;
+      document.getElementById("count-day").innerHTML = days;
+      document.getElementById("count-hour").innerHTML = hours;
+      document.getElementById("count-minute").innerHTML = minutes;
+      document.getElementById("count-second").innerHTML = seconds;
+
+      if (distance < 0) {
+        clearInterval(x);
+      }
+    }, 1000);
+
 
   var sources = ["https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18119526_1904085796547598_1504562668742428754_n.jpg?oh=e84f801e4f6e33b8317168875b85c009&oe=5B0B0247",
   "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18198581_1904087563214088_6796387882430851649_n.jpg?oh=dfe6d30e467c58a862cf022f30e3e374&oe=5ADD5A0F",
