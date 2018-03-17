@@ -15,7 +15,7 @@ jQuery(function ($) {
     // --------------------------------------------------------------------
 
     (function () {
-        $('#preloader').delay(0).fadeOut('slow');
+        $('#preloader').delay(750).fadeOut('slow');
     }());
 
 
