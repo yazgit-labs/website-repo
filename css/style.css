@@ -145,6 +145,13 @@ ul {
     text-transform : uppercase;
     }
 
+.btn-font {
+    text-transform : uppercase;
+    font-size : 18px;
+    color        : #fd367e !important;
+    font-weight: bold;
+}
+
 .btn-lg {
     font-size : 18px;
     padding   : 15px 30px
@@ -152,7 +159,7 @@ ul {
 
 .btn-reverse {
     background   : transparent;
-    color        : #fd367e;
+    color        : #fd367e !important;
     border-color : #fd367e;
 }
 
@@ -362,6 +369,17 @@ button:focus,
         }
     }
 
+
+.fill {
+    width: 100%;
+    height: 35px;
+}
+
+.mid-title {
+    width: 100%;
+    text-align: center;
+}
+
 /*-------------------
  * Jumbotron
  *-------------------*/
@@ -444,6 +462,11 @@ button:focus,
 
 .jumbotron .content .count-down .parts .part label.name {
     font-weight: 200;
+}
+
+.jumbotron .date {
+    margin-top: 45px;
+    font-size: 20px;
 }
 
 .jumbotron .btn {
@@ -546,14 +569,57 @@ button:focus,
         }
     }
 
-.team .thumbnail img {
-    width : 100%;
+.team .thumbnail .image-filter {
+    width: 130px;
+    height: 130px;
+    position: relative;
+    border-radius: 100%;
+    margin: 0px auto;
     box-shadow: 3px 3px 15px grey;
+}
+
+.team .thumbnail .image-filter.big  {
+    width: 180px;
+    height: 180px;
+}
+
+.team .thumbnail .image-filter .filter {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    background: rgb(0,0,0,0.8);
+    border-radius: 100%;
+    text-align: center;
+    color: #fff;
+    padding-top: 53px;
+    font-size: 25px;
+    display: none;
+}
+
+.team .thumbnail .image-filter .filter a {
+    color: rgba(255,255,255,0.6);
+}
+
+.team .thumbnail .image-filter .filter a:hover {
+    color: rgb(255,255,255);
+}
+
+.team .thumbnail .image-filter .filter.big {
+    width: 180px;
+    height: 180px;
+    padding-top: 78px;
+}
+
+.team .thumbnail img {
+    width : 180px;
+    height: 180px;
+    box-shadow: 3px 3px 15px grey;
+    border-radius: 100%;
     }
 
     .team .thumbnail img.mini {
     width : 130px;
-    box-shadow: 3px 3px 15px grey;
+    height: 130px;
     }
 
 .team .thumbnail .caption {
@@ -561,18 +627,18 @@ button:focus,
     }
 
 .team .thumbnail h3 {
-    font-size        : 16px;
+    font-size        : 13px;
     font-weight: bold;
-
-    margin           : 0 40px;
+    margin           : 0px 15px;
     text-transform   : uppercase;
     padding          : 10px 0;
     }
 
 
 .team .thumbnail h3 small {
-    font-size: 14px;
+    font-size: 11px;
     color     : #888;
+    margin: 5px 0px;
     display: block;
     font-weight: normal;
     }
@@ -921,4 +987,12 @@ section#section-venue {
 
 section h1 {
     font-family: 'Kelly Slab', cursive;
+}
+
+a.pink {
+    color: #fd367e !important;
+}
+
+a.pink:hover {
+    color: #fff !important;
 }

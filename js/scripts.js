@@ -2,12 +2,20 @@ jQuery(function ($) {
 
     'use strict';
 
+    (function () {
+        $('.team').find('.thumbnail').find('.image-filter').mouseover(function() {
+           $(this).find('.filter').fadeIn(300).mouseleave(function() {
+                $(this).fadeOut(300);
+           });
+        });
+    }());
+
     // --------------------------------------------------------------------
     // PreLoader
     // --------------------------------------------------------------------
 
     (function () {
-        $('#preloader').delay(1000).fadeOut('slow');
+        $('#preloader').delay(0).fadeOut('slow');
     }());
 
 
@@ -58,7 +66,7 @@ jQuery(function ($) {
 
 
  function initMap() {
-    var uluru = {lat: 39.930203, lng: 32.859088};
+    var uluru = {lat: 39.929814, lng: 32.855504};
     var map = new google.maps.Map(document.getElementById('googleMap'), {
       zoom: 16,
       center: uluru
