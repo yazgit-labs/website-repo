@@ -168,7 +168,7 @@ ul {
 .btn-reverse:active:focus {
     background-color : #fd367e;
     border-color     : #fd367e;
-    color: #fff;
+    color: #fff !important;
     }
 
 /*btn-primary*/
