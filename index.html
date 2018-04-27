@@ -702,7 +702,7 @@ Ankara Üniversitesi, 50. Yıl Yerleşkesi, I Blok, Gölbaşı / ANKARA</div>
 <script src="js/main.js"></script>
 <script src="js/gallery.js"></script> 
 <script type="text/javascript">
-    var countDownDate = new Date("April 28, 2018").getTime();
+    var countDownDate = new Date("April 29, 2018").getTime();
     var x = setInterval(function() {
 
       var now = new Date().getTime();
@@ -713,10 +713,10 @@ Ankara Üniversitesi, 50. Yıl Yerleşkesi, I Blok, Gölbaşı / ANKARA</div>
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      document.getElementById("count-day").innerHTML = days;
-      document.getElementById("count-hour").innerHTML = hours;
-      document.getElementById("count-minute").innerHTML = minutes;
-      document.getElementById("count-second").innerHTML = seconds;
+      document.getElementById("count-day").innerHTML = 0;
+      document.getElementById("count-hour").innerHTML = 0;
+      document.getElementById("count-minute").innerHTML = 0;
+      document.getElementById("count-second").innerHTML = 0;
 
       if (distance < 0) {
         clearInterval(x);
