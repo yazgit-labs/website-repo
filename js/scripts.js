@@ -66,9 +66,9 @@ jQuery(function ($) {
 
 
  function initMap() {
-    var uluru = {lat: 39.929814, lng: 32.855504};
+    var uluru = {lat: 39.929921, lng: 32.859026};
     var map = new google.maps.Map(document.getElementById('googleMap'), {
-      zoom: 16,
+      zoom: 17,
       center: uluru
     });
     var marker = new google.maps.Marker({
@@ -76,3 +76,5 @@ jQuery(function ($) {
       map: map
     });
   }
+  
+  
