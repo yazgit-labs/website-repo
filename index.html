@@ -388,14 +388,23 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title">
-                        <h1>YAZGİG 17'DEN GÖRÜNTÜLER</h1>
+                        <h1>YAZGİG'DEN GÖRÜNTÜLER</h1>
                     </div>
                 </div>
             </div>
+			<center>
+				<div class="row">
+					<button class="btn btn-reverse" id="yazgig15_gallery" onclick="yazgig15_gallery_onClick()">YAZGIG'15</button>
+					<button class="btn btn-reverse" id="yazgig16_gallery" onclick="yazgig16_gallery_onClick()">YAZGIG'16</button>
+					<button class="btn btn-reverse" id="yazgig17_gallery" onclick="yazgig17_gallery_onClick()">YAZGIG'17</button>
+					<button class="btn btn-reverse" id="yazgig18_gallery" onclick="yazgig18_gallery_onClick()">YAZGIG'18</button>
+				</div>
+			</center>
+			<br>
             <div class="row">
                 <div class="col-md-12">
                 
-                  <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery"></div>
+                  <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery" id="galleryId"></div>
 
                     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
@@ -771,35 +780,73 @@ Ankara Üniversitesi, 50. Yıl Yerleşkesi, I Blok, Gölbaşı / ANKARA</div>
 	
 
 
-  var sources = ["https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18119526_1904085796547598_1504562668742428754_n.jpg?oh=e84f801e4f6e33b8317168875b85c009&oe=5B0B0247",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18268386_1904087716547406_3822654718917310476_n.jpg?oh=ad0bad36ff73229561b4e99e9e913936&oe=5B257293",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18194942_1904091766547001_4591343095538352389_n.jpg?oh=440b227ffa792ff9522c6ab6dbcee1e6&oe=5B16200A",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18194613_1904092229880288_7490134315708607879_n.jpg?oh=8a519e6a8fd857a47640be3b3378e18d&oe=5B1B9DB2",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18158003_1904086063214238_2528190910643886686_n.jpg?oh=34a140ddccea49a7e151f2650c401177&oe=5B0B645C",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18221851_1904092879880223_1270902647217359295_n.jpg?oh=995f25d9d487eb18e628f77aeedec41d&oe=5B2054E8",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18195154_1904086339880877_1980330319796715689_n.jpg?oh=a9dcc76ac3ccdcb00e0074b9efbedebd&oe=5B220B26",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18194899_1904088733213971_4403723957944091986_n.jpg?oh=67e6dd3b29cd0b5c7e1a75a64c45c9ef&oe=5B24168E",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18198379_1904089083213936_754669040656758813_n.jpg?oh=fbdfaa366b2188a1e98a87f4ce7b1402&oe=5B125003",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18199012_1904090316547146_7060895223735830317_n.jpg?oh=df1b885a8c6a0282fc75b648db336c7f&oe=5B1A3999",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18193972_1904089353213909_4838257620056907719_n.jpg?oh=a8d2248bf0b41102677f2c41978719ee&oe=5B25B288",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18199269_1904089589880552_2578423168532503119_n.jpg?oh=c44c2271bb86f693c922e1114a8f0cee&oe=5B1AEB86",  
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18194943_1904090103213834_452347552489560191_n.jpg?oh=fa5f1b7df5127588eeaf1d3e11f8ef58&oe=5B14C6E6",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18157970_1904093276546850_8771262583968996041_n.jpg?oh=bdaafe063297e17bb0846e303a42c097&oe=5B21EC3D",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18194581_1904093523213492_1945363097794345179_n.jpg?oh=059053b9dff1338c5ef5b6aa3279c388&oe=5B1B7D8D",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18199240_1904093679880143_2227052588213014953_n.jpg?oh=3e35abc06da320285ae2e04cee549ddd&oe=5B100876",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18194234_1904094329880078_5325844610122480584_n.jpg?oh=a9ca3e36b9a62684573884844ecc7972&oe=5B214015",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18222547_1904093769880134_4523076274144247540_n.jpg?oh=32e95bb9d3e27b69774e27c681ee494a&oe=5B1BC43C",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18195022_1904099269879584_5991556250319880939_n.jpg?oh=f9104badba990525b60cf16d3c11d156&oe=5B244E30",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18194065_1904095166546661_4845114172694860544_n.jpg?oh=9f55fb3406f8d280ccb38922405e534a&oe=5B0F0AED",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18199502_1904095313213313_6366553220362768637_n.jpg?oh=b3df7fc31b4843f93723429e3b52fb19&oe=5B1E462F",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18221786_1904099349879576_4897428016729606804_n.jpg?oh=0d6857f13c01dd914e685158b0a1ef0a&oe=5B1CB3D9",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18193733_1904095763213268_2952703662408806060_n.jpg?oh=e09347b1361501990d08f2ef34948f83&oe=5B0C6554",
-  "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/18194174_1904101293212715_651824389346245769_n.jpg?oh=f7a7c9b635b55fa127acd93663251bd6&oe=5B0C8914",
-  "./img/galeri/1.jpg", "./img/galeri/2.jpg"];
-
-  for(i=0; i<sources.length; i++) {
-    $('.my-gallery').append('<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a href="'+sources[i]+'" itemprop="contentUrl" data-size="3872x2592"><img src="'+sources[i]+'" itemprop="thumbnail" alt="Yazgig" /></a></figure>');
+  var sources2015 = ["./img/galeri/2015Yazgig/1.JPG", 
+  "./img/galeri/2015Yazgig/2.JPG", 
+  "./img/galeri/2015Yazgig/3.JPG", 
+  "./img/galeri/2015Yazgig/4.JPG", 
+  "./img/galeri/2015Yazgig/5.JPG", 
+  "./img/galeri/2015Yazgig/6.JPG", 
+  "./img/galeri/2015Yazgig/7.JPG", 
+  "./img/galeri/2015Yazgig/8.JPG", 
+  "./img/galeri/2015Yazgig/9.JPG", 
+  "./img/galeri/2015Yazgig/10.JPG", 
+  "./img/galeri/2015Yazgig/11.JPG", 
+  "./img/galeri/2015Yazgig/12.JPG", 
+  "./img/galeri/2015Yazgig/13.JPG", 
+  "./img/galeri/2015Yazgig/14.JPG",
+  "./img/galeri/2015Yazgig/15.JPG"];
+  
+  var sources2017 = ["./img/galeri/2017Yazgig/1.JPG", 
+  "./img/galeri/2017Yazgig/2.JPG", 
+  "./img/galeri/2017Yazgig/3.JPG", 
+  "./img/galeri/2017Yazgig/4.JPG", 
+  "./img/galeri/2017Yazgig/5.JPG", 
+  "./img/galeri/2017Yazgig/6.JPG", 
+  "./img/galeri/2017Yazgig/7.JPG", 
+  "./img/galeri/2017Yazgig/8.JPG", 
+  "./img/galeri/2017Yazgig/9.JPG", 
+  "./img/galeri/2017Yazgig/10.JPG"];
+  
+  var sources2018 = ["./img/galeri/2018Yazgig/1.JPG", 
+  "./img/galeri/2018Yazgig/2.JPG", 
+  "./img/galeri/2018Yazgig/3.JPG", 
+  "./img/galeri/2018Yazgig/4.JPG", 
+  "./img/galeri/2018Yazgig/5.JPG", 
+  "./img/galeri/2018Yazgig/6.JPG", 
+  "./img/galeri/2018Yazgig/7.JPG", 
+  "./img/galeri/2018Yazgig/8.JPG", 
+  "./img/galeri/2018Yazgig/9.JPG", 
+  "./img/galeri/2018Yazgig/10.JPG", 
+  "./img/galeri/2018Yazgig/11.JPG", 
+  "./img/galeri/2018Yazgig/12.JPG", 
+  "./img/galeri/2018Yazgig/13.JPG"];
+  
+  function yazgig15_gallery_onClick(){
+	  document.getElementById("galleryId").innerHTML = "";
+	  for(i=0; i<sources2015.length; i++) {
+		$('.my-gallery').append('<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a href="'+sources2015[i]+'" itemprop="contentUrl" data-size="3872x2592"><img src="'+sources2015[i]+'" itemprop="thumbnail" alt="Yazgig" /></a></figure>');
+	  }
   }
+  
+  function yazgig16_gallery_onClick(){
+	  document.getElementById("galleryId").innerHTML = "";
+	  document.getElementById("galleryId").innerHTML = "<h3>EKLENECEK</h3>";
+  }
+  
+	function yazgig17_gallery_onClick(){
+	  document.getElementById("galleryId").innerHTML = "";  
+	  for(i=0; i<sources2017.length; i++) {
+		$('.my-gallery').append('<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a href="'+sources2017[i]+'" itemprop="contentUrl" data-size="3872x2592"><img src="'+sources2017[i]+'" itemprop="thumbnail" alt="Yazgig" /></a></figure>');
+	  }
+  }
+  function yazgig18_gallery_onClick(){
+	  document.getElementById("galleryId").innerHTML = "";  
+	  for(i=0; i<sources2018.length; i++) {
+		$('.my-gallery').append('<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a href="'+sources2018[i]+'" itemprop="contentUrl" data-size="3872x2592"><img src="'+sources2018[i]+'" itemprop="thumbnail" alt="Yazgig" /></a></figure>');
+	  }
+  }
+  
+  
   
 </script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
