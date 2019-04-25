@@ -73,7 +73,7 @@
 
     <div class="jumbotron text-center">
         <div class="content">
-            <div class="event-desc">YAPAY ZEKA VE GÖRÜNTÜ İŞLEME GÜNLERİ</div>
+            <div class="event-desc">YAPAY ZEKA VE GÖRÜNTÜ İŞLEME GÜNÜ</div>
             <h1>YAZGİG'19</h1>
             <div class="event-second-desc">Alanının En Büyük Organizasyonu İçin Son</div>
             <div class="count-down">
@@ -875,11 +875,11 @@ Ankara Üniversitesi, 50. Yıl Yerleşkesi, I Blok, Gölbaşı / ANKARA</div>
 	  document.getElementById("galleryId").innerHTML = "<h3>EKLENECEK</h3>";
   }
   
-	function yazgig17_gallery_onClick(){
-	  document.getElementById("galleryId").innerHTML = "";  
-	  for(i=0; i<sources2017.length; i++) {
-		$('.my-gallery').append('<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a href="'+sources2017[i]+'" itemprop="contentUrl" data-size="3872x2592"><img src="'+sources2017[i]+'" itemprop="thumbnail" alt="Yazgig" /></a></figure>');
-	  }
+  function yazgig17_gallery_onClick(){
+        document.getElementById("galleryId").innerHTML = "";  
+        for(i=0; i<sources2017.length; i++) {
+                $('.my-gallery').append('<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a href="'+sources2017[i]+'" itemprop="contentUrl" data-size="3872x2592"><img src="'+sources2017[i]+'" itemprop="thumbnail" alt="Yazgig" /></a></figure>');
+        }
   }
   function yazgig18_gallery_onClick(){
 	  document.getElementById("galleryId").innerHTML = "";  
