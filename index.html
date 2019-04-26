@@ -291,9 +291,13 @@
             <div class="row">
 
                 <div class="col-md-4">
+					<div class="session">
+                        <b><font size=2><time>9:00</time></font></b>
+                        <h2>Kayıt Başlangıcı</h2>
+                    </div>
                     <div class="session">
                         <b><font size=2><time>9:30</time></font></b>
-                        <h2>Kayıt Başlangıcı</h2>
+                        <h2>Rektör Konuşması</h2>
                     </div>
 
                     <div class="session">
@@ -875,11 +879,11 @@ Ankara Üniversitesi, 50. Yıl Yerleşkesi, I Blok, Gölbaşı / ANKARA</div>
 	  document.getElementById("galleryId").innerHTML = "<h3>EKLENECEK</h3>";
   }
   
-  function yazgig17_gallery_onClick(){
-        document.getElementById("galleryId").innerHTML = "";  
-        for(i=0; i<sources2017.length; i++) {
-                $('.my-gallery').append('<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a href="'+sources2017[i]+'" itemprop="contentUrl" data-size="3872x2592"><img src="'+sources2017[i]+'" itemprop="thumbnail" alt="Yazgig" /></a></figure>');
-        }
+	function yazgig17_gallery_onClick(){
+	  document.getElementById("galleryId").innerHTML = "";  
+	  for(i=0; i<sources2017.length; i++) {
+		$('.my-gallery').append('<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"><a href="'+sources2017[i]+'" itemprop="contentUrl" data-size="3872x2592"><img src="'+sources2017[i]+'" itemprop="thumbnail" alt="Yazgig" /></a></figure>');
+	  }
   }
   function yazgig18_gallery_onClick(){
 	  document.getElementById("galleryId").innerHTML = "";  
