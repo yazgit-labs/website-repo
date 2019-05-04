@@ -822,67 +822,40 @@ Ankara Üniversitesi, 50. Yıl Yerleşkesi, I Blok, Gölbaşı / ANKARA</div>
 
       var now = new Date().getTime();
       var distance = countDownDate - now + 32400000; //Burada 9 saati ms cinsinden ekliyoruz ki event saati 00:00 olarak ayarlanmasın.
-		
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-		
 		if(distance > 0){
-		document.getElementById("big-event").innerHTML = "Alanının En Büyük Organizasyonuna Son";
-      document.getElementById("count-day").innerHTML = days;
-      document.getElementById("count-hour").innerHTML = hours;
-      document.getElementById("count-minute").innerHTML = minutes;
-      document.getElementById("count-second").innerHTML = seconds;
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			document.getElementById("big-event").innerHTML = "Alanının En Büyük Organizasyonuna Son";
+			document.getElementById("count-day").innerHTML = days;
+			document.getElementById("count-hour").innerHTML = hours;
+			document.getElementById("count-minute").innerHTML = minutes;
+			document.getElementById("count-second").innerHTML = seconds;
+			document.getElementById("count-days-label").innerHTML = "Gün";
+			document.getElementById("count-hours-label").innerHTML = "Saat";
+			document.getElementById("count-minute-label").innerHTML = "Dakika";
+			document.getElementById("count-second-label").innerHTML = "Saniye";
 	  
-	  document.getElementById("count-days-label").innerHTML = "Gün";
-	  document.getElementById("count-hours-label").innerHTML = "Saat";
-	  document.getElementById("count-minute-label").innerHTML = "Dakika";
-	  document.getElementById("count-second-label").innerHTML = "Saniye";
 	  
-	  
-	} else if (distance >= -3600000) { //Saat 10'a kadar
-		document.getElementById("big-event").innerHTML = "<font size=5>Alanının En Büyük Organizasyonuna Girişler AÇILDI!</font>";
-		document.getElementById("count-day").innerHTML = ""; //Bu ve alt kısımlarda; basitçe, gözükmesini istemediğimiz yerleri boş bıraktırıyoruz.
-      document.getElementById("count-hour").innerHTML = "";
-      document.getElementById("count-minute").innerHTML = "";
-      document.getElementById("count-second").innerHTML = "";
-		document.getElementById("count-days-label").innerHTML = "";
-	  document.getElementById("count-hours-label").innerHTML = "";
-	  document.getElementById("count-minute-label").innerHTML = "";
-	  document.getElementById("count-second-label").innerHTML = "";
-	} else if (-3600000 > distance > -7200000) { //Saat 11'e kadar
-		document.getElementById("big-event").innerHTML = "<font size=5>Alanının En Büyük Organizasyonu BAŞLADI!</font>";
-		document.getElementById("count-day").innerHTML = "";
-		document.getElementById("count-hour").innerHTML = "";
-		document.getElementById("count-minute").innerHTML = "";
-		document.getElementById("count-second").innerHTML = "";
-		document.getElementById("count-days-label").innerHTML = "";
-		document.getElementById("count-hours-label").innerHTML = "";
-		document.getElementById("count-minute-label").innerHTML = "";
-		document.getElementById("count-second-label").innerHTML = "";
-	} else if (-7200000 >= distance > -21600000) {//Saat 11'den 15'e kadar
-		document.getElementById("big-event").innerHTML = "<font size=5>Alanının En Büyük Organizasyonu Devam Ediyor!</font>";
-		document.getElementById("count-day").innerHTML = "";
-		document.getElementById("count-hour").innerHTML = "";
-		document.getElementById("count-minute").innerHTML = "";
-		document.getElementById("count-second").innerHTML = "";
-		document.getElementById("count-days-label").innerHTML = "";
-		document.getElementById("count-hours-label").innerHTML = "";
-		document.getElementById("count-minute-label").innerHTML = "";
-		document.getElementById("count-second-label").innerHTML = "";
-	} else {
-		document.getElementById("big-event").innerHTML = "Alanının En Büyük Organizasyonu Bitti.";
-		document.getElementById("count-day").innerHTML = "";
-		document.getElementById("count-hour").innerHTML = "";
-		document.getElementById("count-minute").innerHTML = "";
-		document.getElementById("count-second").innerHTML = "";
-		document.getElementById("count-days-label").innerHTML = "";
-		document.getElementById("count-hours-label").innerHTML = "";
-		document.getElementById("count-minute-label").innerHTML = "";
-		document.getElementById("count-second-label").innerHTML = "";
-	}
+		} else if (distance >= -3600000) { //Saat 10'a kadar
+			document.getElementById("big-event").innerHTML = "<font size=5>Alanının En Büyük Organizasyonuna Girişler AÇILDI!</font>";
+		} else if (-3600000 > distance > -7200000) { //Saat 11'e kadar
+			document.getElementById("big-event").innerHTML = "<font size=5>Alanının En Büyük Organizasyonu BAŞLADI!</font>";
+		} else if (-7200000 >= distance > -21600000) {//Saat 11'den 15'e kadar
+			document.getElementById("big-event").innerHTML = "<font size=5>Alanının En Büyük Organizasyonu Devam Ediyor!</font>";
+		} else {
+			document.getElementById("big-event").innerHTML = "Alanının En Büyük Organizasyonu Bitti.";
+		}
       if (distance < 0) {
+		document.getElementById("count-day").innerHTML = ""; //Bu ve alt kısımlarda; basitçe, gözükmesini istemediğimiz yerleri boş bıraktırıyoruz.
+		document.getElementById("count-hour").innerHTML = "";
+		document.getElementById("count-minute").innerHTML = "";
+		document.getElementById("count-second").innerHTML = "";
+		document.getElementById("count-days-label").innerHTML = "";
+		document.getElementById("count-hours-label").innerHTML = "";
+		document.getElementById("count-minute-label").innerHTML = "";
+		document.getElementById("count-second-label").innerHTML = "";
         clearInterval(x);
       }
     }, 1000);
