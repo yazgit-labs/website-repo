@@ -75,24 +75,24 @@
         <div class="content">
             <div class="event-desc">YAPAY ZEKA VE GÖRÜNTÜ İŞLEME GÜNÜ</div>
             <h1>YAZGİG'19</h1>
-            <div class="event-second-desc">Alanının En Büyük Organizasyonu İçin Son</div>
+            <div class="event-second-desc" id="big-event">Alanının En Büyük Organizasyonu İçin Son</div>
             <div class="count-down">
                 <div class="parts">
                     <div class="part">
                         <label class="value" id="count-day">0</label>
-                        <label class="name">Gün</label>
+                        <label class="name" id="count-days-label">Gün</label>
                     </div>
                     <div class="part">
                         <label class="value" id="count-hour">0</label>
-                        <label class="name">Saat</label>
+                        <label class="name" id="count-hours-label">Saat</label>
                     </div>
                     <div class="part">
                         <label class="value" id="count-minute">0</label>
-                        <label class="name">Dakika</label>
+                        <label class="name" id="count-minute-label">Dakika</label>
                     </div>
                     <div class="part">
                         <label class="value" id="count-second">0</label>
-                        <label class="name">Saniye</label>
+                        <label class="name" id="count-second-label">Saniye</label>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -821,23 +821,66 @@ Ankara Üniversitesi, 50. Yıl Yerleşkesi, I Blok, Gölbaşı / ANKARA</div>
     var x = setInterval(function() {
 
       var now = new Date().getTime();
-      var distance = countDownDate - now + 32400000;
-		if(distance > 0){
+      var distance = countDownDate - now + 32400000; //Burada 9 saati ms cinsinden ekliyoruz ki event saati 00:00 olarak ayarlanmasın.
+		
       var days = Math.floor(distance / (1000 * 60 * 60 * 24));
       var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 		
-		
+		if(distance > 0){
+		document.getElementById("big-event").innerHTML = "Alanının En Büyük Organizasyonuna Son";
       document.getElementById("count-day").innerHTML = days;
       document.getElementById("count-hour").innerHTML = hours;
       document.getElementById("count-minute").innerHTML = minutes;
       document.getElementById("count-second").innerHTML = seconds;
+	  
+	  document.getElementById("count-days-label").innerHTML = "Gün";
+	  document.getElementById("count-hours-label").innerHTML = "Saat";
+	  document.getElementById("count-minute-label").innerHTML = "Dakika";
+	  document.getElementById("count-second-label").innerHTML = "Saniye";
+	  
+	  
+	} else if (distance >= -3600000) { //Saat 10'a kadar
+		document.getElementById("big-event").innerHTML = "<font size=5>Alanının En Büyük Organizasyonuna Girişler AÇILDI!</font>";
+		document.getElementById("count-day").innerHTML = ""; //Bu ve alt kısımlarda; basitçe, gözükmesini istemediğimiz yerleri boş bıraktırıyoruz.
+      document.getElementById("count-hour").innerHTML = "";
+      document.getElementById("count-minute").innerHTML = "";
+      document.getElementById("count-second").innerHTML = "";
+		document.getElementById("count-days-label").innerHTML = "";
+	  document.getElementById("count-hours-label").innerHTML = "";
+	  document.getElementById("count-minute-label").innerHTML = "";
+	  document.getElementById("count-second-label").innerHTML = "";
+	} else if (-3600000 > distance > -7200000) { //Saat 11'e kadar
+		document.getElementById("big-event").innerHTML = "<font size=5>Alanının En Büyük Organizasyonu BAŞLADI!</font>";
+		document.getElementById("count-day").innerHTML = "";
+		document.getElementById("count-hour").innerHTML = "";
+		document.getElementById("count-minute").innerHTML = "";
+		document.getElementById("count-second").innerHTML = "";
+		document.getElementById("count-days-label").innerHTML = "";
+		document.getElementById("count-hours-label").innerHTML = "";
+		document.getElementById("count-minute-label").innerHTML = "";
+		document.getElementById("count-second-label").innerHTML = "";
+	} else if (-7200000 >= distance > -21600000) {//Saat 11'den 15'e kadar
+		document.getElementById("big-event").innerHTML = "<font size=5>Alanının En Büyük Organizasyonu Devam Ediyor!</font>";
+		document.getElementById("count-day").innerHTML = "";
+		document.getElementById("count-hour").innerHTML = "";
+		document.getElementById("count-minute").innerHTML = "";
+		document.getElementById("count-second").innerHTML = "";
+		document.getElementById("count-days-label").innerHTML = "";
+		document.getElementById("count-hours-label").innerHTML = "";
+		document.getElementById("count-minute-label").innerHTML = "";
+		document.getElementById("count-second-label").innerHTML = "";
 	} else {
-      document.getElementById("count-day").innerHTML = 0;
-      document.getElementById("count-hour").innerHTML = 0;
-      document.getElementById("count-minute").innerHTML = 0;
-      document.getElementById("count-second").innerHTML = 0;
+		document.getElementById("big-event").innerHTML = "Alanının En Büyük Organizasyonu Bitti.";
+		document.getElementById("count-day").innerHTML = "";
+		document.getElementById("count-hour").innerHTML = "";
+		document.getElementById("count-minute").innerHTML = "";
+		document.getElementById("count-second").innerHTML = "";
+		document.getElementById("count-days-label").innerHTML = "";
+		document.getElementById("count-hours-label").innerHTML = "";
+		document.getElementById("count-minute-label").innerHTML = "";
+		document.getElementById("count-second-label").innerHTML = "";
 	}
       if (distance < 0) {
         clearInterval(x);
