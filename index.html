@@ -769,9 +769,9 @@ Ankara Üniversitesi, 50. Yıl Yerleşkesi, I Blok, Gölbaşı / ANKARA</div>
 	  
 		} else if (distance >= -3600000) { //Saat 10'a kadar
 			document.getElementById("big-event").innerHTML = "<font size=5>Alanının En Büyük Organizasyonuna Girişler AÇILDI!</font>";
-		} else if (-3600000 > distance > -7200000) { //Saat 11'e kadar
+		} else if (-3600000 > distance && distance > -7200000) { //Saat 11'e kadar
 			document.getElementById("big-event").innerHTML = "<font size=5>Alanının En Büyük Organizasyonu BAŞLADI!</font>";
-		} else if (-7200000 >= distance > -21600000) {//Saat 11'den 15'e kadar
+		} else if (-7200000 >= distance && distance > -21600000) {//Saat 11'den 15'e kadar
 			document.getElementById("big-event").innerHTML = "<font size=5>Alanının En Büyük Organizasyonu Devam Ediyor!</font>";
 		} else {
 			document.getElementById("big-event").innerHTML = "Alanının En Büyük Organizasyonu Bitti.";
